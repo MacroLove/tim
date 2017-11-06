@@ -3085,7 +3085,7 @@
     },
     "dot-prop": {
       "version": "4.2.0",
-      "from": "dot-prop@>=4.2.0 <4.3.0",
+      "from": "https://registry.npmjs.org/dot-prop/-/dot-prop-4.2.0.tgz",
       "resolved": "https://registry.npmjs.org/dot-prop/-/dot-prop-4.2.0.tgz"
     },
     "drbg.js": {
@@ -3564,7 +3564,7 @@
     "etherscan-api": {
       "version": "3.0.8",
       "from": "mvayngrib/etherscan-api",
-      "resolved": "git://github.com/mvayngrib/etherscan-api.git#245c6927253fe4f305eaa24a256a76a3fd6c7189"
+      "resolved": "git://github.com/mvayngrib/etherscan-api.git#3b2862e5e53fdff861b249bf11e3e05e3571dede"
     },
     "event-emitter": {
       "version": "0.3.5",
@@ -6152,9 +6152,9 @@
       "resolved": "https://registry.npmjs.org/react-native-blinkid/-/react-native-blinkid-1.1.0.tgz"
     },
     "react-native-branch": {
-      "version": "1.1.1",
-      "from": "react-native-branch@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/react-native-branch/-/react-native-branch-1.1.1.tgz"
+      "version": "2.1.1",
+      "from": "react-native-branch@>=2.0.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/react-native-branch/-/react-native-branch-2.1.1.tgz"
     },
     "react-native-button": {
       "version": "1.8.2",
