@@ -938,12 +938,21 @@ var Store = Reflux.createStore({
   },
 
   setBusyWith(reason) {
-    this.busyWith = reason && translate(reason)
+    if (this.busyWith) {
+      debug(`${this.busyWith.name} took ${(Date.now() - this.busyWith.start)}ms`)
+    }
+
+    this.busyWith = {
+      name: reason && translate(reason),
+      start: Date.now()
+    }
+
+    debug(`busy with ${this.busyWith.name}`)
     this.triggerBusy()
   },
 
   triggerBusy() {
-    this.trigger({ action: 'busy', activity: this.busyWith })
+    this.trigger({ action: 'busy', activity: this.busyWith.name })
   },
 
   async buildDriver (...args) {
@@ -8470,6 +8479,7 @@ var Store = Reflux.createStore({
     }
 
     Push.init({ node, me, Store: this })
+    // Push.register()
   },
   async registerForPushNotifications() {
     await this._pushSemaphore.wait()
@@ -8484,6 +8494,10 @@ var Store = Reflux.createStore({
     try {
       // don't run in parallel, keychain is touchy
       const identityInfo = await identityUtils.generateIdentity()
+      if (__DEV__) {
+        this.setBusyWith('setting encryption key')
+      }
+
       await utils.setPassword(ENCRYPTION_KEY, encryptionKey)
       this.setBusyWith(null)
       return {
